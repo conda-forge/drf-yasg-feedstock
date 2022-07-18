@@ -1,5 +1,5 @@
 {% set name = "drf-yasg" %}
-{% set version = "1.20.0" %}
+{% set version = "1.21.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d50f197c7f02545d0b736df88c6d5cf874f8fea2507ad85ad7de6ae5bf2d9e5a
+  sha256: addb1072117e432886e65f8441f351ee32afd09c4636820090c147cc689f6ddc
 
 build:
   number: 0
