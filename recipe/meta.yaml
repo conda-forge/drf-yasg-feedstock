@@ -1,5 +1,5 @@
 {% set name = "drf-yasg" %}
-{% set version = "1.21.0" %}
+{% set version = "1.21.2" %}
 
 package:
   name: {{ name|lower }}
