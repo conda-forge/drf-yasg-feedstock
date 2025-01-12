@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/drf-yasg-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/drf-yasg-{{ version }}.tar.gz
   sha256: cbb7f81c3d140f2207392b4bc5dde65384eeb58e1b7eea1a6d641dec2f7352a9
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6,<=3.12
+    - python {{ python_min }}
     - setuptools >=68.0.0
     - wheel
     - setuptools-scm >=3.0.3
     - pip
   run:
-    - python >=3.6,<=3.12
+    - python >={{ python_min }},<3.13a0
     - djangorestframework >=3.10.3,<=3.14
     - django >=2.2.16,<=4.2
     - pyyaml >=5.1
@@ -38,6 +38,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/axnsan12/drf-yasg
