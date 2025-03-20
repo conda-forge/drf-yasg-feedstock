@@ -1,5 +1,7 @@
 {% set name = "drf-yasg" %}
 {% set version = "1.21.9" %}
+{% set python_min = "3.6" %}
+{% set python_max = "3.12" %}
 
 package:
   name: {{ name|lower }}
@@ -22,6 +24,7 @@ requirements:
     - setuptools-scm >=3.0.3
     - pip
   run:
+    - python >={{ python_min }},<={{ python_max }} 
     - djangorestframework >=3.10.3
     - django >=2.2.16
     - pyyaml >=5.1
