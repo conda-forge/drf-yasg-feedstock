@@ -28,12 +28,10 @@ requirements:
     - inflection>=0.3.1
     - packaging>=21.0
     - pytz>=2021.1
-    - uritemplate>=3.0.0
-    
+    - uritemplate>=3.0.0    
     - psycopg2>=2.7.3
     - gunicorn>=19.7.1
     - whitenoise>=3.3.1
-
     - Pillow>=4.3.0
     - django-filter>=2.4.0,<25
     - djangorestframework-camel-case>=1.1.2
