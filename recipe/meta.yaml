@@ -18,7 +18,7 @@ build:
 
 requirements:
   host:
-    - python >=3.6,<=3.12
+    - python {{ python_min }}
     - setuptools >=68.0.0
     - wheel
     - setuptools-scm >=3.0.3
@@ -53,6 +53,7 @@ test:
     - pip check
     - pytest -n 2 --cov --cov-config .coveragerc --cov-append --cov-report="" {posargs}
   requires:
+    - python {{ python_min }}
     - pip
     - pytest
     - swagger-spec-validator >=2.1.0
