@@ -1,13 +1,15 @@
 {% set name = "drf-yasg" %}
-{% set version = "1.21.8" %}
+{% set version = "1.21.9" %}
+{% set python_min = "3.7" %}
+{% set python_max = "3.12" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/drf-yasg-{{ version }}.tar.gz
-  sha256: cbb7f81c3d140f2207392b4bc5dde65384eeb58e1b7eea1a6d641dec2f7352a9
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/drf-yasg-{{ version }}.tar.gz
+  sha256: 53d4319769bac121c56be18095342392b66d755e9fdd309414e1a86b5c3dd5ea
 
 build:
   noarch: python
@@ -16,28 +18,61 @@ build:
 
 requirements:
   host:
-    - python >=3.6,<=3.12
+    - python {{ python_min }}
     - setuptools >=68.0.0
     - wheel
     - setuptools-scm >=3.0.3
     - pip
   run:
-    - python >=3.6,<=3.12
-    - djangorestframework >=3.10.3,<=3.14
-    - django >=2.2.16,<=4.2
+    - python >={{ python_min }},<={{ python_max }} 
+    - djangorestframework >=3.10.3
+    - django >=2.2.16
     - pyyaml >=5.1
     - inflection >=0.3.1
     - packaging >=21.0
     - pytz >=2021.1
-    - uritemplate >=3.0.0
+    - uritemplate >=3.0.0    
+    - psycopg2 >=2.7.3
+    - gunicorn >=19.7.1
+    - whitenoise >=3.3.1
+    - Pillow >=4.3.0
+    - django-filter >=2.4.0,<25
+    - djangorestframework-camel-case >=1.1.2
+    - djangorestframework-recursive >=0.1.2
+    - dj-database-url >=0.4.2
+    - user_agents >=1.1.0
+    - django-cors-headers
+    - django-oauth-toolkit >=1.3.0
+
+    
 
 test:
   imports:
     - drf_yasg
   commands:
     - pip check
+    - pytest -n 2 --cov --cov-config .coveragerc --cov-append --cov-report="" {posargs}
   requires:
+    - python {{ python_min }}
     - pip
+    - pytest
+    - swagger-spec-validator >=2.1.0
+    - pytest >=4.0
+    - pytest-pythonpath >=0.7.1
+    - pytest-cov >=2.6.0
+    - pytest-xdist >=1.25.0
+    - pytest-django >=3.4.4
+    - datadiff =2.0.0
+    - psycopg2-binary =2.9.5
+    - django-fake-model =0.1.4
+    - Pillow >=4.3.0
+    - django-filter >=2.4.0,<25
+    - djangorestframework-camel-case >=1.1.2
+    - djangorestframework-recursive >=0.1.2
+    - dj-database-url >=0.4.2
+    - user_agents >=1.1.0
+    - django-cors-headers
+    - django-oauth-toolkit >=1.3.0
 
 about:
   home: https://github.com/axnsan12/drf-yasg
