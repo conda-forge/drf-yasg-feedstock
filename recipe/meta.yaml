@@ -1,13 +1,14 @@
 {% set name = "drf-yasg" %}
-{% set version = "1.21.8" %}
+{% set version = "1.21.14" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/drf-yasg-{{ version }}.tar.gz
-  sha256: cbb7f81c3d140f2207392b4bc5dde65384eeb58e1b7eea1a6d641dec2f7352a9
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 68d62d5f7505611ba9577115c83b36211cc20d9748a50ce95a44abe411727d10
 
 build:
   noarch: python
@@ -16,15 +17,15 @@ build:
 
 requirements:
   host:
-    - python >=3.6,<=3.12
+    - python {{ python_min }}
     - setuptools >=68.0.0
     - wheel
     - setuptools-scm >=3.0.3
     - pip
   run:
-    - python >=3.6,<=3.12
-    - djangorestframework >=3.10.3,<=3.14
-    - django >=2.2.16,<=4.2
+    - python >={{ python_min }}
+    - djangorestframework >=3.13
+    - django >=4.0
     - pyyaml >=5.1
     - inflection >=0.3.1
     - packaging >=21.0
