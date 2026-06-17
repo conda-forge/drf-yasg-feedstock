@@ -1,5 +1,6 @@
 {% set name = "drf-yasg" %}
 {% set version = "1.21.14" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
@@ -16,13 +17,13 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools >=68.0.0
     - wheel
     - setuptools-scm >=3.0.3
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - djangorestframework >=3.13
     - django >=4.0
     - pyyaml >=5.1
