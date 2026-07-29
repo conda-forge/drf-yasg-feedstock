@@ -5,9 +5,11 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/drf-yasg-feedst
 
 Home: https://github.com/axnsan12/drf-yasg
 
-Package license: BSD-3-Clause
+Package license: Apache-2.0 AND MIT AND BSD-3-Clause
 
 Summary: Automated generation of real Swagger/OpenAPI 2.0 schemas from Django Rest Framework code.
+
+Documentation: https://drf-yasg.readthedocs.io/en/stable/
 
 Current build status
 ====================
@@ -145,4 +147,5 @@ Feedstock Maintainers
 =====================
 
 * [@julian-belina](https://github.com/julian-belina/)
+* [@mgorny](https://github.com/mgorny/)
 
