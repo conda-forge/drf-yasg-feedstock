@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.21.15"
+  version: "1.21.17"
 
 package:
   name: drf-yasg
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/d/drf-yasg/drf_yasg-${{ version }}.tar.gz
-  sha256: ef86838c4ef10dcd3ac1ebf2be601cbe02978b999671caa43667f7c9db961468
+  sha256: 05b4fcac07f4359aa0af51adee8ede2e74208a41d43ca0350a50a0bb9e2f3b76
 
 build:
   number: 0
