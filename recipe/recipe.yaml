@@ -1,20 +1,20 @@
 schema_version: 1
 
 context:
-  version: "1.21.15"
+  version: "1.21.17"
 
 package:
   name: drf-yasg
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/d/drf-yasg/drf_yasg-${{ version }}.tar.gz
-  sha256: ef86838c4ef10dcd3ac1ebf2be601cbe02978b999671caa43667f7c9db961468
+  url: https://files.pythonhosted.org/packages/source/d/drf-yasg/drf_yasg-${{ version }}.tar.gz
+  sha256: 05b4fcac07f4359aa0af51adee8ede2e74208a41d43ca0350a50a0bb9e2f3b76
 
 build:
   number: 0
   noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -30,6 +30,7 @@ requirements:
     - packaging >=21.0
     - pytz >=2021.1
     - pyyaml >=5.1
+    - swagger-spec-validator >=2.1.0
     - uritemplate >=3.0.0
 
 tests:
